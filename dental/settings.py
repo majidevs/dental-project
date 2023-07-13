@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import Config
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -127,3 +128,11 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = Config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = Config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = True
