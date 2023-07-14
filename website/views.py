@@ -13,15 +13,30 @@ def contact(request):
         message = request.POST['message']
         return render(request, 'contact.html', {'message_name': message_name })
     
-        # Send email
+       
         send_mail(
-            message_name,#subject
-            message,#message
-            message_email,#from
-            ['EMAIL_HOST_USER'],# to mail
+            message_name,
+            message,
+            message_email,
+            ['EMAIL_HOST_USER'],
             fail_silently=False,
         )
 
     else:
         # return the page
         return render(request, 'contact.html', {})
+    
+def service(request):
+    return render(request, 'service.html', {})
+
+def about(request):
+    return render(request, 'about.html', {})
+
+def pricing(request):
+    return render(request, 'pricing.html', {})
+
+def blog(request):
+    return render(request, 'blog.html', {})
+
+def blogdetails(request):
+    return render(request, 'blogdetails.html', {})
